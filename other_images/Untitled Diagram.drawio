@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2021-10-28T23:41:36.538Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30" version="15.6.2" etag="yvpb8TCA985whLQVkwPh" type="github"><diagram id="fe2y60FVQubBHlufS5HE">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-10-28T23:52:06.860Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30" etag="rCtXNPotd7vI5f4vbkyO" version="15.6.2" type="github">
+  <diagram id="fe2y60FVQubBHlufS5HE" name="Page-1">
+    <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MO6e-vOmBaJi7nvvT0W3-1" target="MO6e-vOmBaJi7nvvT0W3-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-1" value="&lt;b&gt;Original Image&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MO6e-vOmBaJi7nvvT0W3-2" target="MO6e-vOmBaJi7nvvT0W3-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-2" value="&lt;b&gt;Split Data&lt;/b&gt; Into Train, Validation, Test Set" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="240" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MO6e-vOmBaJi7nvvT0W3-6" target="MO6e-vOmBaJi7nvvT0W3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-6" value="&lt;b&gt;For each set:&lt;/b&gt;&lt;br&gt;Resize Image.&lt;br&gt;25% of original image" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="245" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MO6e-vOmBaJi7nvvT0W3-8" target="MO6e-vOmBaJi7nvvT0W3-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-8" value="&lt;b&gt;For each image:&lt;/b&gt;&lt;br&gt;Flip image vertical,&lt;br&gt;Flip image horizontal" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="245" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="MO6e-vOmBaJi7nvvT0W3-10" value="&lt;b&gt;Output:&lt;/b&gt;&lt;br&gt;1 - resized&lt;br&gt;1 - horizontal flip&lt;br&gt;1 - vertical flip" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

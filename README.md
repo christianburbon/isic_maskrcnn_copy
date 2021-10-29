@@ -9,7 +9,7 @@ The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of
 Figure 1
 
 ## Data Pre-processing
-One of the biggest challenges in CNNs is the amount of computataion required to process large resolution images. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels, otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. The target object is then labelled as "leison". The pre-processing sequence is shown in Figure 2
+One of the biggest challenges in CNNs is the amount of computataion required to process large resolution images. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels, otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. The target object is then labelled as "leison". Lastly, images are normalized. The pre-processing sequence is shown in Figure 2
 
-https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg
+![Image Pre-processing](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg)
 Figure 2

@@ -8,3 +8,5 @@ The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of
 ![Lesion Image + Mask](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/visualize_image_mask.png)
 
 ## Data Pre-processing
+One of the biggest challenges in CNNs is the amount of computataion required to process large resolution images. 
+https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg

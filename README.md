@@ -5,8 +5,11 @@ This project uses [Mask R-CNN](https://arxiv.org/abs/1703.06870) to predict lesi
 ## ISICs 2018 Challenge: Lesion Boundary Segmentation
 The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of 2,594 Lesion images (in .jpg format) with accompanying mask segmentations (in .png format). For the mask segmentations the values 0 and <255 represent the background, and 255 represents the target object. The Figure 1 shows the Lesion image with its accompanying mask.
 
-![Lesion Image + Mask](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/visualize_image_mask.png)Figure 1
+![Lesion Image + Mask](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/visualize_image_mask.png)
+Figure 1
 
 ## Data Pre-processing
-One of the biggest challenges in CNNs is the amount of computataion required to process large resolution images. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels, otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. The target object is then labelled as "leison".
+One of the biggest challenges in CNNs is the amount of computataion required to process large resolution images. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels, otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. The target object is then labelled as "leison". The pre-processing sequence is shown in Figure 2
+
 https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg
+Figure 2

@@ -10,6 +10,7 @@ The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of
 Figure 1: Lesion Images + Accompanying Masks
 
 ## Data Pre-processing
+Before any pre-processing of the data, to ensure that there is no data leakage among the augmentations of the original image and the original image itself, data is split into Training, Validation, and Test at the beginning. First, data is split into Train (75%), and Test (25%), and second the Train set is further split into Train (75%), and Validation (25%).
 One of the biggest challenges in CNNs is the amount of computation required to process large resolution images. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels, otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. Images are normalized by dividing them by 255. Lastly, the target object is then labelled as "leison". The pre-processing sequence is shown in Figure 2, and the flipped images, and masks are shown in Figure 3.
 
 ![Image Pre-processing](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg)

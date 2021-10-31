@@ -64,55 +64,48 @@ Figure 7: Overall Training Loss
 ### Prediction Results
 The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 8 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 9 (where the number shown in the image is the model's prediction confidence), and its accompanying original image, and original mask in Figure 10 (see predictions folder for other results).
 
-![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
-
-Figure 8: IoU Scores Boxplot
-
+*![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
+**Figure 8: IoU Scores Boxplot
 
 
-![Prediction Result](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/predictions_2.png)
 
-Figure 9: Prediction Result on Test Set
+*![Prediction Result](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/predictions_2.png)
+**Figure 9: Prediction Result on Test Set
 
-![Precition Basis](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/gt_2.png)
-
-Figure 10: Original Image and Mask from Prediction
+*![Precition Basis](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/gt_2.png)
+**Figure 10: Original Image and Mask from Prediction
 
 
 
 ## Pre-requisites
 This project uses the Mask R-CNN implementation from [akTwelve](https://github.com/akTwelve/Mask_RCNN) which uses Tensorflow 2 implementation of the original code from [matterport](https://github.com/matterport/Mask_RCNN). A detailed step-by-step installation guide to setup akTwelve's Mask R-CNN implementation using Tensorflow 2 can be seen [here](https://www.immersivelimit.com/tutorials/mask-rcnn-for-windows-10-tensorflow-2-cuda-101). Please ensure to check that you have the correct CUDA, and cuDNN installed for your Tensorflow version as described in the installation guide.
 
-###Libraries
-numpy
-scipy
-Pillow
-cython
-matplotlib
-scikit-image
-tensorflow>=2.0.0
-opencv-python
-cv2
-h5py
-imgaug
-os
-glob
-sys
-time
-gc
-IPython[all]
+### Libraries
+*numpy
+*scipy
+*Pillow
+*cython
+*matplotlib
+*scikit-image
+*tensorflow>=2.0.0
+*opencv-python
+*cv2
+*h5py
+*imgaug
+*os
+*glob
+*sys
+*time
+*gc
+*IPython[all]
 
 
 
 ## References
-[1] He, Kaiming, Georgia Gkioxari, Piotr Dollár, and Ross Girshick, “Mask R-CNN,” in 2017 IEEE International Conference on Computer Vision (ICCV), October 2017, pp. 2980–2988. [Online] Available:http://arxiv.org/abs/1703.06870.
+*[1] He, Kaiming, Georgia Gkioxari, Piotr Dollár, and Ross Girshick, “Mask R-CNN,” in 2017 IEEE International Conference on Computer Vision (ICCV), October 2017, pp. 2980–2988. [Online] Available:http://arxiv.org/abs/1703.06870.
+*[2] N. Codella, V. Rotemberg, P. Tschandl, M. E. Celebi, S. Dusza, D. Gutman, B. Helba, A. Kalloo, K. Liopyris, M. Marchetti, H. Kittler, A. Halpern, Dec 20, 2018, "ISIC 2018: Skin Lesion Analysis Towards Melanoma Detection," distributed by International Skin Imaging Collaboration, [Online] Available: https://challenge2018.isic-archive.com/.
+*[3] Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. January, 2016, ‘Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks’, [Online] Available: http://arxiv.org/abs/1506.01497.
 
-[2] N. Codella, V. Rotemberg, P. Tschandl, M. E. Celebi, S. Dusza, D. Gutman, B. Helba, A. Kalloo, K. Liopyris, M. Marchetti, H. Kittler, A. Halpern, Dec 20, 2018, "ISIC 2018: Skin Lesion Analysis Towards Melanoma Detection," distributed by International Skin Imaging Collaboration, [Online] Available: https://challenge2018.isic-archive.com/.
-
-[3] Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. January, 2016, ‘Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks’, [Online] Available: http://arxiv.org/abs/1506.01497.
-
-Acknowledgements for the ISIC 2018 dataset:
-
-[4] Noel Codella, Veronica Rotemberg, Philipp Tschandl, M. Emre Celebi, Stephen Dusza, David Gutman, Brian Helba, Aadi Kalloo, Konstantinos Liopyris, Michael Marchetti, Harald Kittler, Allan Halpern: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018, [Online] Available: https://arxiv.org/abs/1902.03368
-
-[5] Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018).
+*Acknowledgements for the ISIC 2018 dataset:
+*[4] Noel Codella, Veronica Rotemberg, Philipp Tschandl, M. Emre Celebi, Stephen Dusza, David Gutman, Brian Helba, Aadi Kalloo, Konstantinos Liopyris, Michael Marchetti, Harald Kittler, Allan Halpern: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018, [Online] Available: https://arxiv.org/abs/1902.03368
+*[5] Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018).

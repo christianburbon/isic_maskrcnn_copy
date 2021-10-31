@@ -1,6 +1,6 @@
 # ISICs 2018 Leison Segmentation using Mask R-CNN
 
-This project uses [Mask R-CNN](https://arxiv.org/abs/1703.06870) [1] to predict lesion segmentation boundaries within dermoscopic images [ISIC 2018 Challenge - Task 1: Lesion Boundary Segmentation](https://challenge.isic-archive.com/landing/2018/45/) [2] . The Mask R-CNN model will be trained with the goal of acheiving an Intersection over Union (IoU) score of 0.8 for the predicted image segmentation. Training is done using with a Nvidia GeForce GTX 1050 Ti (4GB) GPU.
+This project uses [Mask R-CNN](https://arxiv.org/abs/1703.06870) [1] to predict lesion segmentation boundaries within dermoscopic images [ISIC 2018 Challenge - Task 1: Lesion Boundary Segmentation](https://challenge.isic-archive.com/landing/2018/45/) [2] . The Mask R-CNN model will be trained with the goal of acheiving an Intersection over Union (IoU) score of 0.8 for the predicted image segmentation. Training is done using a Nvidia GeForce GTX 1050 Ti (4GB) GPU.
 
 ## ISICs 2018 Challenge: Lesion Boundary Segmentation
 The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of 2,594 Lesion images (in .jpg format) with accompanying mask segmentations (in .png format). For the mask segmentations the pixel values 0 upto less than 255 represent the background, and 255 represents the target object. The Figure 1 shows the Lesion image with its accompanying mask.

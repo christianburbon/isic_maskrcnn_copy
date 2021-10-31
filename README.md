@@ -33,8 +33,13 @@ Figure 4: Mask R-CNN Architecture[1]
 
 
 ## Training Configuration and Results
+### Configuration
+The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. The training follows a two-step procedure that takes advantage of selecting the depth of the model to decrease/increase amount of feature learning. Two layer configurations were used, namely, the _"heads"_ (The RPN, classifier and mask heads of the network) and _"3+"_ (_heads_ + Train Resnet upto stage 3) layers. The "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch. Augmentations are also applied during training where none upto all of the augmentations are used (Figure 5).
 
-The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. the "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch.
+![Train Augmentations](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/training_augmentations.png)
+
+Figure 5: Train Augmentations
+
 
 ## Results
 ### Loss Metrics

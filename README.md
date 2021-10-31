@@ -32,6 +32,16 @@ Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper
 Figure 4: Mask R-CNN Architecture[1]
 
 
+## Training Configuration and Results
+
+The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. the "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch.
+
+## Results
+### Loss Metrics
+Figure 5 shows the overall training loss after 
+
+
+
 ## References
 [1] He, Kaiming, Georgia Gkioxari, Piotr Dollár, and Ross Girshick. (Jan 2018). ‘Mask R-CNN’. Facebook AI Research (FAIR). [Online] Available:http://arxiv.org/abs/1703.06870.
 [2] 

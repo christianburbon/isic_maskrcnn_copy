@@ -5,7 +5,7 @@ This project uses [Mask R-CNN](https://arxiv.org/abs/1703.06870) [1] to predict 
 ## ISICs 2018 Challenge: Lesion Boundary Segmentation
 The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of 2,594 Lesion images (in .jpg format) with accompanying mask segmentations (in .png format). For the mask segmentations the pixel values 0 upto less than 255 represent the background, and 255 represents the target object. The Figure 1 shows the Lesion image with its accompanying mask.
 
-![Lesion Image + Mask](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/visualize_image_mask.png)
+![dataset1](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/visualize_dataset/imgmask_1.png)
 
 Figure 1: Lesion Images + Accompanying Masks
 
@@ -17,14 +17,34 @@ One of the biggest challenges in CNNs is the amount of computation required to p
 
 Figure 2: Image Pre-processing Steps
 
-Insert Fig3 here
 
-Figure 3: Images After Pre-processing
+![pre-processed images](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/pre_processing.png)
+
+Figure 3: Image and Mask After Pre-processing
 
 
 ## Mask R-CNN Architecture
 
-Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf) [3] where it also uses a region proposal network (RPN) that proposes candidate bounding boxes during the first stage, and then modifies the second stage where the same RoIPool is used to extract features then adds a parallel generates an output for each RoI. Mask R-CNN optimizes the three (3) loss functions for each ROI namely, classification loss (_Lcls_), bounding-box class loss (_Lbox_), and mask loss (_Lmask_). The total loss (_L_) is defined as _L = Lcls + Lbox + Lmask_ [1].
+Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf) [3] where it also uses a region proposal network (RPN) that proposes candidate bounding boxes during the first stage, and then modifies the second stage where the same RoIPool is used to extract features then adds a parallel generates an output for each RoI. Mask R-CNN optimizes the three (3) loss functions for each ROI namely, classification loss (_Lcls_), bounding-box class loss (_Lbox_), and mask loss (_Lmask_). The total loss (_L_) is defined as _L = Lcls + Lbox + Lmask_ [1]. The Mask RCNN architecture is show in Figure 4.
+
+![mask rcnn](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/mask_rcnn%20architecture.png)
+
+Figure 4: Mask R-CNN Architecture[1]
+
+
+## Training Configuration and Results
+### Configuration
+The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. The training follows a two-step procedure that takes advantage of selecting the depth of the model to decrease/increase amount of feature learning. Two layer configurations were used, namely, the _"heads"_ (The RPN, classifier and mask heads of the network) and _"3+"_ (_heads_ + Train Resnet upto stage 3) layers. The "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch. Augmentations are also applied during training where none upto all of the augmentations are used (Figure 5).
+
+![Train Augmentations](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/training_augmentations.png)
+
+Figure 5: Train Augmentations
+
+
+## Results
+### Loss Metrics
+Figure 5 shows the overall training loss after 
+
 
 
 ## References

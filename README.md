@@ -42,7 +42,7 @@ Figure 5: Train Augmentations
 
 
 ### Training Loss
-Figure 6 shows the overall training loss after each epoch, other loss metrics are shown in the model_loss folder.
+Figure 6 shows the overall training loss after each epoch, other loss metrics are shown in the model_loss folder. Note that step 0 is the 1st epoch, and step 29 is the 30th.
 
 ![Epoch Loss](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/model_loss/epoch_loss.png)
 

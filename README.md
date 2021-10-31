@@ -50,7 +50,7 @@ Figure 6: Overall Training Loss
 
 
 ### Prediction Results
-The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 7 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 8, and its accompanying original image, and original mask in Figure 9 (see predictions folder for other results).
+The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 7 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 8 (where the number shown in the image is the model's prediction confidence), and its accompanying original image, and original mask in Figure 9 (see predictions folder for other results).
 
 ![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
 

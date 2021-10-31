@@ -55,24 +55,28 @@ Figure 6: Train Augmentations
 ### Training Loss
 Figure 7 shows the overall training loss after each epoch, other loss metrics are shown in the model_loss folder. Note that step 0 is the 1st epoch, and step 29 is the 30th.
 
-* ![Epoch Loss](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/model_loss/epoch_loss.png)
-* Figure 7: Overall Training Loss
+![Epoch Loss](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/model_loss/epoch_loss.png)
+
+Figure 7: Overall Training Loss
 
 
 
 ### Prediction Results
 The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 8 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 9 (where the number shown in the image is the model's prediction confidence), and its accompanying original image, and original mask in Figure 10 (see predictions folder for other results).
 
-* ![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
-* Figure 8: IoU Scores Boxplot
+![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
+
+Figure 8: IoU Scores Boxplot
 
 
 
-* ![Prediction Result](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/predictions_2.png)
-* Figure 9: Prediction Result on Test Set
+![Prediction Result](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/predictions_2.png)
 
-* ![Precition Basis](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/gt_2.png)
-* Figure 10: Original Image and Mask from Prediction
+Figure 9: Prediction Result on Test Set
+
+
+![Precition Basis](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/gt_2.png)
+Figure 10: Original Image and Mask from Prediction
 
 
 ## Pre-requisites

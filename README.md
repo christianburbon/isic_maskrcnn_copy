@@ -11,59 +11,64 @@ Figure 1: Lesion Images + Accompanying Masks
 
 ## Data Pre-processing
 Before any pre-processing of the data, to ensure that there is no data leakage among the augmentations of the original image and the original image itself, data is split into Training, Validation, and Test at the beginning. First, data is split into Train (75%), and Test (25%), and second the Train set is further split into Train (75%), and Validation (25%).
-One of the biggest challenges in CNNs is the amount of computation required to process large resolution images. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels, otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. Images are normalized by dividing them by 255. Lastly, the target object is then labelled as "leison". The pre-processing sequence is shown in Figure 2, and the flipped images, and masks are shown in Figure 3. After augmentation, the total images per dataset are as follows: Train Set (4,374), Validation Set (1,461), Test Set (649).
+One of the biggest challenges in CNNs is the amount of computation required to process large resolution images as seen in Figure 2 where most of the images are above 1 megapixel. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels (around 0.5 megapixels), otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. Images are normalized by dividing them by 255. Lastly, the target object is then labelled as "leison". The pre-processing sequence is shown in Figure 3, and the flipped images, and masks are shown in Figure 4. After augmentation, the total images per dataset are as follows: Train Set (4,374), Validation Set (1,461), Test Set (649).
+
+![Image Resolution](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/resolution_distribution.png)
+
+Figure 2: Pixel Resolution of Original Images
+
 
 ![Image Pre-processing](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg)
 
-Figure 2: Image Pre-processing Steps
+Figure 3: Image Pre-processing Steps
 
 
 ![pre-processed images](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/pre_processing.png)
 
-Figure 3: Image and Mask After Pre-processing
+Figure 4: Image and Mask After Pre-processing
 
 
 ## Mask R-CNN Architecture
 
-Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf) [3] where it also uses a _Region Proposal Network (RPN)_ that proposes candidate bounding boxes during the first stage, and then modifies the second stage where the same _RoIPool_ is used to extract features then adds a parallel generates an output for each _Region of Interest (RoI)_. Mask R-CNN optimizes the three (3) loss functions for each _RoI_ namely, classification loss (_Lcls_), bounding-box class loss (_Lbox_), and mask loss (_Lmask_). The total loss (_L_) is defined as _L = Lcls + Lbox + Lmask_ [1]. The Mask RCNN architecture is show in Figure 4.
+Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf) [3] where it also uses a _Region Proposal Network (RPN)_ that proposes candidate bounding boxes during the first stage, and then modifies the second stage where the same _RoIPool_ is used to extract features then adds a parallel generates an output for each _Region of Interest (RoI)_. Mask R-CNN optimizes the three (3) loss functions for each _RoI_ namely, classification loss (_Lcls_), bounding-box class loss (_Lbox_), and mask loss (_Lmask_). The total loss (_L_) is defined as _L = Lcls + Lbox + Lmask_ [1]. The Mask RCNN architecture is show in Figure 5.
 
 ![mask rcnn](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/mask_rcnn%20architecture.png)
 
-Figure 4: Mask R-CNN Architecture [1]
+Figure 5: Mask R-CNN Architecture [1]
 
 
 ## Training Configuration and Results
 ### Configuration
-The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. The training follows a two-step procedure that takes advantage of selecting the depth of the model to decrease/increase amount of feature learning. Two layer configurations were used, namely, the _"heads"_ (The RPN, classifier and mask heads of the network) and _"3+"_ (_heads_ + Train Resnet upto stage 3) layers. The "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch. The dataset is shuffled every epoch, and 1500 steps were taken for each. Non-geometric augmentations are also applied during training where none upto all of the augmentations are used randomly (Figure 5).
+The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. The training follows a two-step procedure that takes advantage of selecting the depth of the model to decrease/increase amount of feature learning. Two layer configurations were used, namely, the _"heads"_ (The RPN, classifier and mask heads of the network) and _"3+"_ (_heads_ + Train Resnet upto stage 3) layers. The "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch. The dataset is shuffled every epoch, and 1500 steps were taken for each. Non-geometric augmentations are also applied during training where none upto all of the augmentations are used randomly (Figure 6).
 
 ![Train Augmentations](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/training_augmentations.png)
 
-Figure 5: Train Augmentations
+Figure 6: Train Augmentations
 
 
 ### Training Loss
-Figure 6 shows the overall training loss after each epoch, other loss metrics are shown in the model_loss folder. Note that step 0 is the 1st epoch, and step 29 is the 30th.
+Figure 7 shows the overall training loss after each epoch, other loss metrics are shown in the model_loss folder. Note that step 0 is the 1st epoch, and step 29 is the 30th.
 
 ![Epoch Loss](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/model_loss/epoch_loss.png)
 
-Figure 6: Overall Training Loss
+Figure 7: Overall Training Loss
 
 
 ### Prediction Results
-The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 7 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 8 (where the number shown in the image is the model's prediction confidence), and its accompanying original image, and original mask in Figure 9 (see predictions folder for other results).
+The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 8 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 9 (where the number shown in the image is the model's prediction confidence), and its accompanying original image, and original mask in Figure 10 (see predictions folder for other results).
 
 ![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
 
-Figure 7: IoU Scores Boxplot
+Figure 8: IoU Scores Boxplot
 
 
 ![Prediction Result](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/predictions_2.png)
 
-Figure 8: Prediction Result on Test Set
+Figure 9: Prediction Result on Test Set
 
 ![Precition Basis](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/gt_2.png)
 
-Figure 9: Original Image and Mask from Prediction
+Figure 10: Original Image and Mask from Prediction
 
 
 ## References

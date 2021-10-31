@@ -17,9 +17,9 @@ One of the biggest challenges in CNNs is the amount of computation required to p
 
 Figure 2: Image Pre-processing Steps
 
-Insert Fig3 here
+![pre-processed images](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/pre_processing.png)
 
-Figure 3: Images After Pre-processing
+Figure 3: Image and Mask After Pre-processing
 
 
 ## Mask R-CNN Architecture

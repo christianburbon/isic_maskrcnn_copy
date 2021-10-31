@@ -79,7 +79,36 @@ Figure 9: Prediction Result on Test Set
 Figure 10: Original Image and Mask from Prediction
 
 
+
+## Pre-requisites
+This project uses the Mask R-CNN implementation from [akTwelve](https://github.com/akTwelve/Mask_RCNN) which uses Tensorflow 2 implementation of the original code from [matterport](https://github.com/matterport/Mask_RCNN). A detailed step-by-step installation guide to setup akTwelve's Mask R-CNN implementation using Tensorflow 2 can be seen [here](https://www.immersivelimit.com/tutorials/mask-rcnn-for-windows-10-tensorflow-2-cuda-101). Please ensure to check that you have the correct CUDA, and cuDNN installed for your Tensorflow version as described in the installation guide.
+
+###Libraries
+numpy
+scipy
+Pillow
+cython
+matplotlib
+scikit-image
+tensorflow>=2.0.0
+opencv-python
+cv2
+h5py
+imgaug
+os
+glob
+sys
+time
+gc
+IPython[all]
+
+
+
 ## References
-[1] He, Kaiming, Georgia Gkioxari, Piotr Dollár, and Ross Girshick. (Jan 2018). ‘Mask R-CNN’. Facebook AI Research (FAIR). [Online] Available:http://arxiv.org/abs/1703.06870.
+[1] K. He, G. Gkioxari, P. Dollár, and R. Girshick, “Mask R-CNN,” in 2017 IEEE International Conference on Computer Vision (ICCV), Oct. 2017, pp. 2980–2988. [Online] Available:http://arxiv.org/abs/1703.06870.
 [2] 
 [3] 
+
+Other acknowledgements for the ISIC 2018 datasets
+[4] Noel Codella, Veronica Rotemberg, Philipp Tschandl, M. Emre Celebi, Stephen Dusza, David Gutman, Brian Helba, Aadi Kalloo, Konstantinos Liopyris, Michael Marchetti, Harald Kittler, Allan Halpern: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018; https://arxiv.org/abs/1902.03368
+[5] Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018).

@@ -105,14 +105,14 @@ IPython[all]
 
 
 ## References
-[1] K. He, G. Gkioxari, P. Dollár, and R. Girshick, “Mask R-CNN,” in 2017 IEEE International Conference on Computer Vision (ICCV), Oct. 2017, pp. 2980–2988. [Online] Available:http://arxiv.org/abs/1703.06870.
+[1] He, Kaiming, Georgia Gkioxari, Piotr Dollár, and Ross Girshick, “Mask R-CNN,” in 2017 IEEE International Conference on Computer Vision (ICCV), October 2017, pp. 2980–2988. [Online] Available:http://arxiv.org/abs/1703.06870.
 
-[2] 
+[2] N. Codella, V. Rotemberg, P. Tschandl, M. E. Celebi, S. Dusza, D. Gutman, B. Helba, A. Kalloo, K. Liopyris, M. Marchetti, H. Kittler, A. Halpern, Dec 20, 2018, "ISIC 2018: Skin Lesion Analysis Towards Melanoma Detection," distributed by International Skin Imaging Collaboration, [Online] Available: https://challenge2018.isic-archive.com/.
 
-[3] 
+[3] Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. January, 2016, ‘Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks’, [Online] Available: http://arxiv.org/abs/1506.01497.
 
-Other acknowledgements for the ISIC 2018 datasets:
+Acknowledgements for the ISIC 2018 dataset:
 
-[4] Noel Codella, Veronica Rotemberg, Philipp Tschandl, M. Emre Celebi, Stephen Dusza, David Gutman, Brian Helba, Aadi Kalloo, Konstantinos Liopyris, Michael Marchetti, Harald Kittler, Allan Halpern: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018; https://arxiv.org/abs/1902.03368
+[4] Noel Codella, Veronica Rotemberg, Philipp Tschandl, M. Emre Celebi, Stephen Dusza, David Gutman, Brian Helba, Aadi Kalloo, Konstantinos Liopyris, Michael Marchetti, Harald Kittler, Allan Halpern: “Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)”, 2018, [Online] Available: https://arxiv.org/abs/1902.03368
 
 [5] Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018).

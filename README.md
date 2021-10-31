@@ -17,6 +17,7 @@ One of the biggest challenges in CNNs is the amount of computation required to p
 
 Figure 2: Image Pre-processing Steps
 
+
 ![pre-processed images](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/pre_processing.png)
 
 Figure 3: Image and Mask After Pre-processing
@@ -24,7 +25,11 @@ Figure 3: Image and Mask After Pre-processing
 
 ## Mask R-CNN Architecture
 
-Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf) [3] where it also uses a region proposal network (RPN) that proposes candidate bounding boxes during the first stage, and then modifies the second stage where the same RoIPool is used to extract features then adds a parallel generates an output for each RoI. Mask R-CNN optimizes the three (3) loss functions for each ROI namely, classification loss (_Lcls_), bounding-box class loss (_Lbox_), and mask loss (_Lmask_). The total loss (_L_) is defined as _L = Lcls + Lbox + Lmask_ [1].
+Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf) [3] where it also uses a region proposal network (RPN) that proposes candidate bounding boxes during the first stage, and then modifies the second stage where the same RoIPool is used to extract features then adds a parallel generates an output for each RoI. Mask R-CNN optimizes the three (3) loss functions for each ROI namely, classification loss (_Lcls_), bounding-box class loss (_Lbox_), and mask loss (_Lmask_). The total loss (_L_) is defined as _L = Lcls + Lbox + Lmask_ [1]. The Mask RCNN architecture is show in Figure 4.
+
+![mask rcnn](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/mask_rcnn%20architecture.png)
+
+Figure 4: Mask R-CNN Architecture[1]
 
 
 ## References

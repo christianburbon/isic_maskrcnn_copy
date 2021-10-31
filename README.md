@@ -9,6 +9,7 @@ The ISICs Lesion Boundary segmentation pre-processed dataset contains a total of
 
 Figure 1: Lesion Images + Accompanying Masks
 
+
 ## Data Pre-processing
 Before any pre-processing of the data, to ensure that there is no data leakage among the augmentations of the original image and the original image itself, data is split into Training, Validation, and Test at the beginning. First, data is split into Train (75%), and Test (25%), and second the Train set is further split into Train (75%), and Validation (25%).
 One of the biggest challenges in CNNs is the amount of computation required to process large resolution images as seen in Figure 2 where most of the images are above 1 megapixel. In order to overcome this challenge, the images were resized to 25% of original when it exceed 700*700 pixels (around 0.5 megapixels), otherwise, resolution is retained. Additionally, to account for varying positions of the Lesion in images, Images are flipped vertical, and horizontal separately. Images are normalized by dividing them by 255. Lastly, the target object is then labelled as "leison". The pre-processing sequence is shown in Figure 3, and the flipped images, and masks are shown in Figure 4. After augmentation, the total images per dataset are as follows: Train Set (4,374), Validation Set (1,461), Test Set (649).
@@ -18,14 +19,17 @@ One of the biggest challenges in CNNs is the amount of computation required to p
 Figure 2: Pixel Resolution of Original Images
 
 
+
 ![Image Pre-processing](https://github.com/christianburbon/lettuce_annotation/blob/master/other_images/pre-processing.jpg)
 
 Figure 3: Image Pre-processing Steps
 
 
+
 ![pre-processed images](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/pre_processing.png)
 
 Figure 4: Image and Mask After Pre-processing
+
 
 
 ## Mask R-CNN Architecture
@@ -37,6 +41,7 @@ Mask-RCNN is an extension of [Faster R-CNN](https://proceedings.neurips.cc/paper
 Figure 5: Mask R-CNN Architecture [1]
 
 
+
 ## Training Configuration and Results
 ### Configuration
 The model was trained using pre-trained model weights using [COCO](https://cocodataset.org) dataset. The training follows a two-step procedure that takes advantage of selecting the depth of the model to decrease/increase amount of feature learning. Two layer configurations were used, namely, the _"heads"_ (The RPN, classifier and mask heads of the network) and _"3+"_ (_heads_ + Train Resnet upto stage 3) layers. The "heads" layers on the first 5 epochs, and then "3+" layers upto the 30th epoch. The dataset is shuffled every epoch, and 1500 steps were taken for each. Non-geometric augmentations are also applied during training where none upto all of the augmentations are used randomly (Figure 6).
@@ -44,6 +49,7 @@ The model was trained using pre-trained model weights using [COCO](https://cocod
 ![Train Augmentations](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/other_images/training_augmentations.png)
 
 Figure 6: Train Augmentations
+
 
 
 ### Training Loss
@@ -54,12 +60,14 @@ Figure 7 shows the overall training loss after each epoch, other loss metrics ar
 Figure 7: Overall Training Loss
 
 
+
 ### Prediction Results
 The goal of the project is to reach an IoU score of >= 0.80, and this project has reached 0.85 on the test set where Figure 8 shows a boxplot of the IoU score distribution per image. It is known that there is only 1 object per image, and to account for the possibility of having detected multiple instances, the maximum IoU score per image was taken. One of the prediction results are shown in Figure 9 (where the number shown in the image is the model's prediction confidence), and its accompanying original image, and original mask in Figure 10 (see predictions folder for other results).
 
 ![IoU Boxplot](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/boxplot_ious.png)
 
 Figure 8: IoU Scores Boxplot
+
 
 
 ![Prediction Result](https://github.com/christianburbon/isic_maskrcnn_copy/blob/master/predictions/predictions_2.png)
